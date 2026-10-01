@@ -1,0 +1,27 @@
+[project]
+name = "Frost Share"
+version = "1.0.0"
+description = "Local file sharing and group chat"
+dependencies = [
+    "flet",
+    "psutil",
+]
+
+[tool.flet]
+product = "Frost Share"
+org = "com.frostshare.app"
+app_module = "main"
+
+[tool.flet.android]
+dependencies = [
+    "pyjnius",
+]
+
+[tool.flet.android.permissions]
+"android.permission.INTERNET" = true
+"android.permission.ACCESS_NETWORK_STATE" = true
+"android.permission.ACCESS_WIFI_STATE" = true
+"android.permission.CHANGE_WIFI_MULTICAST_STATE" = true
+# Required for legacy Android fallback in save_file_to_android_downloads
+"android.permission.WRITE_EXTERNAL_STORAGE" = "maxSdkVersion=28"
+"android.permission.READ_EXTERNAL_STORAGE" = "maxSdkVersion=32"
